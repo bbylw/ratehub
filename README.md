@@ -118,12 +118,9 @@ ratehub/
 ├── config.js               # 配置文件
 ├── README.md               # 项目说明
 ├── LICENSE                 # MIT许可证
-├── DEPLOYMENT.md           # 详细部署指南
 ├── .gitignore              # Git忽略文件
 ├── start.bat               # Windows启动脚本
 ├── start.sh                # Linux/Mac启动脚本
-├── deploy-to-github.bat    # Windows部署脚本
-├── deploy-to-github.sh     # Linux/Mac部署脚本
 ├── vercel.json             # Vercel部署配置
 └── netlify.toml            # Netlify部署配置
 ```
@@ -139,32 +136,49 @@ ratehub/
 
 ## 🚀 部署指南
 
-> 📖 **详细部署指南**: 查看 [DEPLOYMENT.md](DEPLOYMENT.md) 获取完整的部署说明
+### 🎯 GitHub Pages 部署
 
-### 🎯 快速部署
+1. **创建GitHub仓库**
+   - 访问 https://github.com/new
+   - 仓库名：`ratehub`
+   - 设为Public
+   - 不添加README（我们已有）
 
-#### 使用部署脚本（推荐）
-```bash
-# Windows用户
-deploy-to-github.bat
+2. **上传代码**
+   ```bash
+   git init
+   git add .
+   git commit -m "Initial commit: RateHub"
+   git branch -M main
+   git remote add origin https://github.com/yourusername/ratehub.git
+   git push -u origin main
+   ```
 
-# Linux/Mac用户
-./deploy-to-github.sh
-```
+3. **启用GitHub Pages**
+   - 进入仓库 Settings → Pages
+   - Source选择 "Deploy from a branch"
+   - Branch选择 "main"
+   - 保存并等待部署
 
-#### 手动部署到GitHub
-1. 在GitHub创建新仓库（建议名称：`ratehub`）
-2. 克隆或上传项目文件
-3. 在仓库设置中启用GitHub Pages
-4. 选择 `main` 分支作为源
-5. 访问 `https://yourusername.github.io/ratehub`
+4. **访问网站**
+   - 几分钟后访问：`https://yourusername.github.io/ratehub`
 
-### 🌐 支持的部署平台
-- **GitHub Pages** - 免费，支持自定义域名
-- **Cloudflare Pages** - 全球CDN，速度极快
-- **Vercel** - 零配置部署，自动HTTPS
-- **Netlify** - 简单易用，功能丰富
-- **Surge.sh** - 命令行部署，快速便捷
+### 🌐 其他部署平台
+
+#### Vercel
+1. 访问 [vercel.com](https://vercel.com)
+2. 连接GitHub仓库
+3. 一键部署
+
+#### Netlify
+1. 访问 [netlify.com](https://netlify.com)
+2. 拖拽文件夹或连接Git
+3. 自动部署
+
+#### Cloudflare Pages
+1. 访问 [pages.cloudflare.com](https://pages.cloudflare.com)
+2. 连接GitHub仓库
+3. 全球CDN加速
 
 ## 🔌 API 集成
 

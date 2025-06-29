@@ -2,6 +2,7 @@
 *.tmp
 tmp_*
 *.temp
+tmp_code_*.ps1
 
 # 系统文件
 .DS_Store
